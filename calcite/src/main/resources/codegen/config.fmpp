@@ -41,13 +41,14 @@ data: {
     # List of additional classes and packages to import.
     # Example. "org.apache.calcite.sql.*", "java.util.List".
     imports: [
+    "name.jessica.calcite.sql.ddl.SqlCreateFunction"
+    "org.apache.calcite.sql.SqlCreate"
     ]
 
     # List of new keywords. Example: "DATABASES", "TABLES". If the keyword is not a reserved
     # keyword add it to 'nonReservedKeywords' section.
     keywords: [
-    "UPLOAD",
-    "JAR"
+    "IF"
     ]
 
     # List of keywords from "keywords" section that are not reserved.
@@ -413,6 +414,7 @@ data: {
     # List of methods for parsing extensions to "CREATE [OR REPLACE]" calls.
     # Each must accept arguments "(SqlParserPos pos, boolean replace)".
     createStatementParserMethods: [
+    "SqlCreateFunction"
     ]
 
     # List of methods for parsing extensions to "DROP" calls.
@@ -433,7 +435,7 @@ data: {
     # given as part of "statementParserMethods", "literalParserMethods" or
     # "dataTypeParserMethods".
     implementationFiles: [
-      "parserImpls.ftl"
+      "createFunction.ftl"
     ]
 
     includePosixOperators: false
